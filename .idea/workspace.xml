@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="23a81b21-131e-40d5-a0eb-ab8c4e6c3115" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UTwntLFrZkETOSzMmX7TEmqi20" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23a81b21-131e-40d5-a0eb-ab8c4e6c3115" name="Default Changelist" comment="" />
+      <created>1575394062764</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575394062764</updated>
+      <workItem from="1578324792187" duration="6518000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="709" y="265" key="#com.intellij.ide.util.MemberChooser" timestamp="1578327229164">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="709" y="265" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1051@0.23.1792.1051" timestamp="1578327229164" />
+    <state x="745" y="444" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578325129574">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="745" y="444" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1792.1051@0.23.1792.1051" timestamp="1578325129574" />
+    <state x="592" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578325330174">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="592" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1051@0.23.1792.1051" timestamp="1578325330174" />
+    <state x="397" y="187" key="SettingsEditor" timestamp="1578588889766">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="397" y="187" key="SettingsEditor/0.23.1792.1051@0.23.1792.1051" timestamp="1578588889766" />
+    <state x="377" y="355" key="com.intellij.ide.util.TipDialog" timestamp="1578324792825">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="377" y="355" key="com.intellij.ide.util.TipDialog/0.23.1792.1051@0.23.1792.1051" timestamp="1578324792825" />
+    <state x="613" y="506" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1578588875085">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="613" y="506" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1792.1051@0.23.1792.1051" timestamp="1578588875085" />
+    <state x="561" y="256" key="search.everywhere.popup" timestamp="1578419311870">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="561" y="256" key="search.everywhere.popup/0.23.1792.1051@0.23.1792.1051" timestamp="1578419311870" />
+  </component>
+</project>
