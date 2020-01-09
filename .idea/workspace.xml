@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23a81b21-131e-40d5-a0eb-ab8c4e6c3115" name="Default Changelist" comment="" />
+    <list default="true" id="23a81b21-131e-40d5-a0eb-ab8c4e6c3115" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graphs/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Graphs/Graph$Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Graphs/Graph$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Graphs/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Graphs/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Graphs/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +26,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -22,6 +37,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1UTwntLFrZkETOSzMmX7TEmqi20" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -33,13 +49,28 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Graphs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -63,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575394062764</updated>
-      <workItem from="1578324792187" duration="6518000" />
+      <workItem from="1578324792187" duration="10859000" />
     </task>
     <servers />
   </component>
@@ -71,10 +102,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="709" y="265" key="#com.intellij.ide.util.MemberChooser" timestamp="1578327229164">
+    <state x="360" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578593176148">
       <screen x="0" y="23" width="1792" height="1051" />
     </state>
-    <state x="709" y="265" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1051@0.23.1792.1051" timestamp="1578327229164" />
+    <state x="360" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1051@0.23.1792.1051" timestamp="1578593176148" />
+    <state x="709" y="265" key="#com.intellij.ide.util.MemberChooser" timestamp="1578593982321">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="709" y="265" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1051@0.23.1792.1051" timestamp="1578593982321" />
     <state x="745" y="444" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578325129574">
       <screen x="0" y="23" width="1792" height="1051" />
     </state>
@@ -83,10 +118,26 @@
       <screen x="0" y="23" width="1792" height="1051" />
     </state>
     <state x="592" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1051@0.23.1792.1051" timestamp="1578325330174" />
-    <state x="397" y="187" key="SettingsEditor" timestamp="1578588889766">
+    <state width="1750" height="288" key="GridCell.Tab.0.bottom" timestamp="1578594835368">
       <screen x="0" y="23" width="1792" height="1051" />
     </state>
-    <state x="397" y="187" key="SettingsEditor/0.23.1792.1051@0.23.1792.1051" timestamp="1578588889766" />
+    <state width="1750" height="288" key="GridCell.Tab.0.bottom/0.23.1792.1051@0.23.1792.1051" timestamp="1578594835368" />
+    <state width="1750" height="288" key="GridCell.Tab.0.center" timestamp="1578594835368">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1750" height="288" key="GridCell.Tab.0.center/0.23.1792.1051@0.23.1792.1051" timestamp="1578594835368" />
+    <state width="1750" height="288" key="GridCell.Tab.0.left" timestamp="1578594835368">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1750" height="288" key="GridCell.Tab.0.left/0.23.1792.1051@0.23.1792.1051" timestamp="1578594835368" />
+    <state width="1750" height="288" key="GridCell.Tab.0.right" timestamp="1578594835368">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1750" height="288" key="GridCell.Tab.0.right/0.23.1792.1051@0.23.1792.1051" timestamp="1578594835368" />
+    <state x="397" y="187" key="SettingsEditor" timestamp="1578594360105">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="397" y="187" key="SettingsEditor/0.23.1792.1051@0.23.1792.1051" timestamp="1578594360105" />
     <state x="377" y="355" key="com.intellij.ide.util.TipDialog" timestamp="1578324792825">
       <screen x="0" y="23" width="1792" height="1051" />
     </state>
