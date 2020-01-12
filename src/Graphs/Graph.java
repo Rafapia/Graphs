@@ -1,14 +1,12 @@
 package Graphs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph<Node> {
 
     /* Fields */
     Map<Node, Vertex> adjacencyList;
+    Random rand = new Random();
 
 
     /* Methods */
@@ -45,6 +43,17 @@ public class Graph<Node> {
         }
     }
 
+    public boolean addRandWeighedEdge(Node from, Node to) {
+        try {
+            double w = rand.nextDouble()*5;
+            this.adjacencyList.get(from).addEdge(new Edge(this.adjacencyList.get(to), w));
+            this.adjacencyList.get(to).addEdge(new Edge(this.adjacencyList.get(from), w));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public boolean removeEdge(Node from, Node to) {
         try {
             this.adjacencyList.get(new Vertex<Node>(from)).removeEdge(to);
@@ -57,6 +66,20 @@ public class Graph<Node> {
     public List<Node> getConnectedNodes(Node node) {
 
          return this.adjacencyList.get(node).getConnections();
+    }
+
+    public List<Edge> getWeighedConnectedNodes(Node node) {
+
+        return this.adjacencyList.get(node).getWeighedConnections();
+    }
+
+    public Node getNode(Node node) {
+
+        return (Node) this.adjacencyList.get(node).getNode();
+    }
+
+    public boolean isNode(Node node) {
+        return this.adjacencyList.containsKey(node);
     }
 
 
@@ -84,6 +107,13 @@ public class Graph<Node> {
         public List<Node> getConnections() {
             List<Node> connections = new ArrayList<>();
             this.edges.forEach(vertex -> connections.add((Node) vertex.toVertex.getNode()));
+
+            return connections;
+        }
+
+        public List<Edge> getWeighedConnections() {
+            List<Edge> connections = new ArrayList<>();
+            this.edges.forEach(vertex -> connections.add(vertex));
 
             return connections;
         }
