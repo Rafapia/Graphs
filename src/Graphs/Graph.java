@@ -1,176 +1,187 @@
 package Graphs;
 
+
 import java.util.*;
 
 public class Graph<Node> {
 
     /* Fields */
-    Map<Node, Vertex> adjacencyList;
-    Random rand = new Random();
+    private Map<Node, ArrayList<Edge>> adjList;
 
 
     /* Methods */
     public Graph() {
-        this.adjacencyList = new HashMap<Node, Vertex>();
+        this.adjList = new HashMap<Node, ArrayList<Edge>>();
     }
 
-    public boolean addNode(Node node) {
-        try {
-            this.adjacencyList.putIfAbsent(node, new Vertex<Node>(node));
-            return true;
-        } catch (Exception e) {
-            return false;
+
+    // Node methods.
+    public void addNode(Node node) {
+        this.adjList.putIfAbsent(node, new ArrayList<>());
+    }
+
+    public void removeNode(Node node) {
+        this.adjList.remove(node);
+    }
+
+    public boolean containsNode(Node node) {
+
+        return this.adjList.containsKey(node);
+    }
+
+    public Set getAllNodes() {
+
+        return this.adjList.keySet();
+    }
+
+    public List getAllChildrenNodes(Node node) {
+
+        List edges = this.getAllEdges(node);
+        List connectedNodes = new ArrayList();
+
+        for (Object edge: edges) {
+            edge = (Edge) edge;
+            connectedNodes.add(((Edge) edge).to);
         }
+
+        return connectedNodes;
     }
 
-    public boolean removeNode(Node node) {
-        try {
-            this.adjacencyList.values().stream().forEach(vertex -> vertex.removeEdge(node));
-            this.adjacencyList.remove(new Vertex<Node>(node));
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
 
+    // Edge methods.
     public boolean addEdge(Node from, Node to, double weight) {
-        try {
-            this.adjacencyList.get(from).addEdge(new Edge(this.adjacencyList.get(to), weight));
-            this.adjacencyList.get(to).addEdge(new Edge(this.adjacencyList.get(from), weight));
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
 
-    public boolean addRandWeighedEdge(Node from, Node to) {
-        try {
-            double w = rand.nextDouble()*5;
-            this.adjacencyList.get(from).addEdge(new Edge(this.adjacencyList.get(to), w));
-            this.adjacencyList.get(to).addEdge(new Edge(this.adjacencyList.get(from), w));
+        if (this.containsNode(to) && this.containsNode(from)) {
+            this.adjList.get(from).add(new Edge(from, to, weight));
+            this.adjList.get(to).add(new Edge(to, from, weight));
             return true;
-        } catch (Exception e) {
-            return false;
         }
+        return false;
     }
 
     public boolean removeEdge(Node from, Node to) {
-        try {
-            this.adjacencyList.get(new Vertex<Node>(from)).removeEdge(to);
+
+        if (this.containsNode(to) && this.containsNode(from)) {
+            this.adjList.get(from).remove(new Edge(to));
+            this.adjList.get(to).remove(new Edge(from));
             return true;
-        } catch (Exception e) {
-            return false;
         }
+        return false;
     }
 
-    public List<Node> getConnectedNodes(Node node) {
+    public double getEdgeWeight(Node from, Node to) {
 
-         return this.adjacencyList.get(node).getConnections();
+        if (this.containsNode(to) && this.containsNode(from)) {
+
+            ArrayList<Edge> connections = this.adjList.get(from);
+
+            for (Edge edge: connections) {
+                if (edge.goesTo(to))
+                    return edge.getWeight();
+            }
+        }
+
+        return Double.POSITIVE_INFINITY;
     }
 
-    public List<Edge> getWeighedConnectedNodes(Node node) {
+    public boolean setEdgeWeight(Node from, Node to, double weight) {
 
-        return this.adjacencyList.get(node).getWeighedConnections();
+        if (this.containsNode(to) && this.containsNode(from)) {
+
+            ArrayList<Edge> connections = this.adjList.get(from);
+
+            for (Edge edge: connections) {
+                if (edge.goesTo(to)) {
+                    edge.setWeight(weight);
+                    break;
+                }
+            }
+
+            connections = this.adjList.get(to);
+
+            for (Edge edge: connections) {
+                if (edge.goesTo(from)) {
+                    edge.setWeight(weight);
+                    break;
+                }
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
-    public Node getNode(Node node) {
+    public List getAllEdges(Node node) {
 
-        return (Node) this.adjacencyList.get(node).getNode();
+        if (this.containsNode(node)) {
+            return this.adjList.get(node);
+        }
+
+        return null;
     }
 
-    public boolean isNode(Node node) {
-        return this.adjacencyList.containsKey(node);
-    }
 
 
     /* Classes */
-    public class Vertex<Node> {
-
-        /* Fields */
-        private Node node;
-        private List<Edge> edges;
-
-        /* Methods */
-        public Vertex(Node node) {
-            this.node = node;
-            this.edges = new ArrayList<Edge>();
-        }
-
-        public void addEdge(Edge edge) {
-            this.edges.add(edge);
-        }
-
-        public void removeEdge(Node node) {
-            this.edges.remove(new Edge(new Vertex(node), 0));
-        }
-
-        public List<Node> getConnections() {
-            List<Node> connections = new ArrayList<>();
-            this.edges.forEach(vertex -> connections.add((Node) vertex.toVertex.getNode()));
-
-            return connections;
-        }
-
-        public List<Edge> getWeighedConnections() {
-            List<Edge> connections = new ArrayList<>();
-            this.edges.forEach(vertex -> connections.add(vertex));
-
-            return connections;
-        }
-
-        public Node getNode() {
-            return this.node;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.node.hashCode();
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return super.equals(obj);
-        }
-    }
-
-
     public class Edge {
 
         /* Fields */
-        private Vertex toVertex;
+        private Node from, to;
         private double weight;
 
         /* Methods */
-        public Edge(Vertex toVertex, double weight) {
-            this.toVertex = toVertex;
+        public Edge(Node to) {
+            this(to, null, 0);
+        }
+        public Edge(Node from, Node to, double weight) {
+            this.to = to;
+            this.from = from;
             this.weight = weight;
         }
 
-        public Vertex getVertex() {
-            return this.toVertex;
+
+        public Node getFrom() {
+            return from;
         }
 
-        public double getWeight(){
-            return this.weight;
+        public void setFrom(Node from) {
+            this.from = from;
+        }
+
+        public Node getTo() {
+            return to;
+        }
+
+        public void setTo(Node to) {
+            this.to = to;
+        }
+
+        public double getWeight() {
+            return weight;
         }
 
         public void setWeight(double weight) {
             this.weight = weight;
         }
 
-        @Override
-        public int hashCode() {
-            return this.toVertex.hashCode();
+//        public boolean equals(Edge other) {
+//            return this.to.equals(other.getTo());
+//        }
+
+        public boolean goesTo(Node to) {
+            return this.to.equals(to);
         }
 
+
         @Override
-        public boolean equals(Object obj) {
-            return super.equals(obj);
+        public int hashCode() {
+            return this.to.hashCode();
         }
 
         @Override
         public String toString() {
-            return this.toVertex.toString() + " -> " + this.weight;
+            return String.format("(%1$s --%3$s--> %2$s)", this.from, this.to, this.weight);
         }
     }
 

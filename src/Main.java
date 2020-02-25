@@ -1,7 +1,4 @@
 import Graphs.Graph;
-import org.jgrapht.graph.DefaultUndirectedWeightedGraph;
-import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleWeightedGraph;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Graph<String> sa = new Graph<String>();
+        Graph<String> sa = new Graph<>();
 
         sa.addNode("Chapel");
         sa.addNode("Alumni");
@@ -48,69 +45,106 @@ public class Main {
         sa.addEdge("Girls", "Alumni", 3);
 
 
+        Dijkstra<String> d = new Dijkstra<>(sa);
+
+
+        System.out.println(d.findShortestPath("Teacher Lot", "Boys"));
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Randomized distances.
-        Graph<String> saRand = new Graph<String>();
+//        WeighedGraph<String> saRand = new WeighedGraph<>();
+//
+//        saRand.addNode("Chapel");
+//        saRand.addNode("Alumni");
+//        saRand.addNode("Girls");
+//        saRand.addNode("VA");
+//        saRand.addNode("US Classes");
+//        saRand.addNode("Teacher Lot");
+//        saRand.addNode("Senior Lot");
+//        saRand.addNode("Security");
+//        saRand.addNode("Rock");
+//        saRand.addNode("Cohen Center");
+//        saRand.addNode("Dining Hall");
+//        saRand.addNode("Science");
+//        saRand.addNode("Boys");
+//        saRand.addNode("Admissions");
+//
+//        saRand.addRandomlyWeighedEdge("Chapel", "Boys");
+//        saRand.addRandomlyWeighedEdge("Chapel", "Alumni");
+//        saRand.addRandomlyWeighedEdge("Chapel", "Cohen Center");
+//        saRand.addRandomlyWeighedEdge("Boys", "Science");
+//        saRand.addRandomlyWeighedEdge("Science", "Dining Hall");
+//        saRand.addRandomlyWeighedEdge("Dining Hall", "Cohen Center");
+//        saRand.addRandomlyWeighedEdge("Dining Hall", "Rock");
+//        saRand.addRandomlyWeighedEdge("Rock", "Security");
+//        saRand.addRandomlyWeighedEdge("Rock", "Cohen Center");
+//        saRand.addRandomlyWeighedEdge("Security", "Admissions");
+//        saRand.addRandomlyWeighedEdge("Security", "Senior Lot");
+//        saRand.addRandomlyWeighedEdge("Security", "Teacher Lot");
+//        saRand.addRandomlyWeighedEdge("Senior Lot", "Admissions");
+//        saRand.addRandomlyWeighedEdge("Admissions", "Alumni");
+//        saRand.addRandomlyWeighedEdge("Admissions", "US Classes");
+//        saRand.addRandomlyWeighedEdge("US Classes", "Teacher Lot");
+//        saRand.addRandomlyWeighedEdge("US Classes", "VA");
+//        saRand.addRandomlyWeighedEdge("VA", "Girls");
+//        saRand.addRandomlyWeighedEdge("Teacher Lot", "Girls");
+//        saRand.addRandomlyWeighedEdge("Girls", "Alumni");
+//
+//        System.out.println(sa.getConnectedNodes("Admissions") + "\n\n");
 
-        saRand.addNode("Chapel");
-        saRand.addNode("Alumni");
-        saRand.addNode("Girls");
-        saRand.addNode("VA");
-        saRand.addNode("US Classes");
-        saRand.addNode("Teacher Lot");
-        saRand.addNode("Senior Lot");
-        saRand.addNode("Security");
-        saRand.addNode("Rock");
-        saRand.addNode("Cohen Center");
-        saRand.addNode("Dining Hall");
-        saRand.addNode("Science");
-        saRand.addNode("Boys");
-        saRand.addNode("Admissions");
 
-        saRand.addRandWeighedEdge("Chapel", "Boys");
-        saRand.addRandWeighedEdge("Chapel", "Alumni");
-        saRand.addRandWeighedEdge("Chapel", "Cohen Center");
-        saRand.addRandWeighedEdge("Boys", "Science");
-        saRand.addRandWeighedEdge("Science", "Dining Hall");
-        saRand.addRandWeighedEdge("Dining Hall", "Cohen Center");
-        saRand.addRandWeighedEdge("Dining Hall", "Rock");
-        saRand.addRandWeighedEdge("Rock", "Security");
-        saRand.addRandWeighedEdge("Rock", "Cohen Center");
-        saRand.addRandWeighedEdge("Security", "Admissions");
-        saRand.addRandWeighedEdge("Security", "Senior Lot");
-        saRand.addRandWeighedEdge("Security", "Teacher Lot");
-        saRand.addRandWeighedEdge("Senior Lot", "Admissions");
-        saRand.addRandWeighedEdge("Admissions", "Alumni");
-        saRand.addRandWeighedEdge("Admissions", "US Classes");
-        saRand.addRandWeighedEdge("US Classes", "Teacher Lot");
-        saRand.addRandWeighedEdge("US Classes", "VA");
-        saRand.addRandWeighedEdge("VA", "Girls");
-        saRand.addRandWeighedEdge("Teacher Lot", "Girls");
-        saRand.addRandWeighedEdge("Girls", "Alumni");
-
-        System.out.println(sa.getConnectedNodes("Admissions") + "\n\n");
+//        String input = "Security";
+//        while (!input.equals("q")) {
+//
+//            // If valid node, show options.
+//            if (sa.containsVertex(input)) {
+//                String currentNode = input;
+//                System.out.println("Currently at " + currentNode);
+//                System.out.print("Connected nodes: ");
+//
+//                for (WeighedGraph.Edge connectedNode : sa.getWeighedConnectedNodes(currentNode)) {
+//                    System.out.print("(" + connectedNode.getTargetNode() + " - " + connectedNode.getWeight() + ") ");
+//                }
+//
+//                System.out.println();
+//            } else if (input.equals("q")) {
+//                break;
+//            }
+//
+//            System.out.print("\nNext node: ");
+//            input = in.nextLine();
+//        }
 
 
-        String input = "Security";
-        while (!input.equals("q")) {
+//        PriorityQueue<String> pq = new PriorityQueue<>();
+//        pq.enqueue("Two", 2);
+//        pq.enqueue("One", 1);
+//        pq.enqueue("Three", 3);
+//        pq.enqueue("Five", 5);
+//        pq.enqueue("Four", 4);
+//        pq.enqueue("Zero", 0);
+//
+//        System.out.println(pq.getPriority("Zero"));
+//
+//        System.out.println(pq);
+//
+//        pq.dequeue();
+//        pq.dequeue();
+//        pq.dequeue();
+//        pq.dequeue();
+//        pq.dequeue();
 
-            // If valid node, show options.
-            if (sa.isNode(input)) {
-                String currentNode = sa.getNode(input);
-                System.out.println("Currently at " + currentNode);
-                System.out.print("Connected nodes: ");
-
-                for (Graph.Edge connectedNode : sa.getWeighedConnectedNodes(currentNode)) {
-                    System.out.print("(" + connectedNode.getVertex().getNode() + " - " + connectedNode.getWeight() + ") ");
-                }
-
-                System.out.println();
-            } else if (input.equals("q")) {
-                break;
-            }
-
-            System.out.print("\nNext node: ");
-            input = in.nextLine();
-        }
     }
 
 }
